@@ -1,0 +1,23 @@
+{
+  "name": "web-scraping",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.10"
+  },
+  "devDependencies": {
+    "@types/cheerio": "^0.22.30",
+    "@types/node": "^16.4.0",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5"
+  }
+}
