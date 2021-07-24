@@ -6,10 +6,9 @@ dotenv.config({});
 
 const hackerNewsUrl = 'https://news.ycombinator.com/';
 
+const { HN_USERNAME, HN_PWD } = process.env || {};
 
 const getHNFeed = async () => {
-  const { HN_USERNAME, HN_PWD } = process.env || {};
-
   const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
 
@@ -24,7 +23,7 @@ const getHNFeed = async () => {
     // access logged in user via document.querySelector('#me').innerHTML;
     let itemsList = document.querySelector('.itemlist tbody').children;
 
-    return Array.from(itemsList)
+    return [...itemsList]
       .map((item) => {
         const title = item.querySelector('td.title:not([valign="top"]');
         const titleLink = title?.querySelector('a.storylink');
